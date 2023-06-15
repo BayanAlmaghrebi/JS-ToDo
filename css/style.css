@@ -6,3 +6,11 @@ body{
     font-family: 'Josefin Sans', sans-serif;
     color: white;
 }
+
+.completed{
+    text-decoration: line-through;
+}
+
+.deleted{
+    display: none;
+}

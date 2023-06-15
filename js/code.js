@@ -28,7 +28,6 @@ function addTodo(e){
     btnComplete.innerHTML = '<i class="fa-solid fa-check"></i>'
     todoAction.appendChild(btnComplete)
 
-
     const btnDelete = document.createElement('button')
     btnDelete.classList.add('btn')
     btnDelete.classList.add('btn-danger')
@@ -39,4 +38,24 @@ function addTodo(e){
     TodoResult.appendChild(todoLi)
 }
 
+
+function todoToggle(e){
+    const item = e.target
+    
+
+    if (item.classList[1] == 'fa-check'){
+        console.log('completed')
+        const taskli = item.parentElement.parentElement.parentElement
+       taskli.childNodes[0].classList.toggle('completed')
+
+    }
+
+    else if (item.classList[1] == 'fa-trash-can'){
+       item.parentElement.parentElement.parentElement.classList.add('deleted')
+    }
+
+}
+
+
 TodoBtn.addEventListener('click',addTodo)
+TodoResult.addEventListener('click',todoToggle)
